@@ -1,9 +1,12 @@
 export const ProfileData = (props) => {
   const {
     card: { name, role, exp },
+    greeting, children
   } = props;
   return (
     <div className="profile-card">
+          {greeting}
+        {children}
       <div className="profile-image">
         <img src="https://i.pravatar.cc/150?img=32" alt="User" />
       </div>
@@ -25,3 +28,7 @@ export const ProfileData = (props) => {
     </div>
   );
 };
+
+function Profile() {
+  return <div>Profile Component</div>;
+}
