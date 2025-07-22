@@ -4,14 +4,17 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #1d1e23, #3e3f4c);
+  background: #1d1e23;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   height: 100vh;
+
 }
 #root {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
 }

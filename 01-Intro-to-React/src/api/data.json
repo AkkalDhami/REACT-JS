@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Akkal Dhami",
+        "role": "MERN Stack Developer",
+        "exp": 2
+    },
+    {
+        "name": "Aarav Sharma",
+        "role": "Frontend Developer",
+        "exp": 3
+    },
+    {
+        "name": "Priya Mehta",
+        "role": "Backend Developer",
+        "exp": 5
+    },
+    {
+        "name": "Ravi Kumar",
+        "role": "UI/UX Designer",
+        "exp": 2
+    },
+    {
+        "name": "Sneha Joshi",
+        "role": "Full Stack Developer",
+        "exp": 4
+    },
+    {
+        "name": "Ankit Rawat",
+        "role": "DevOps Engineer",
+        "exp": 6
+    },
+    {
+        "name": "Neha Singh",
+        "role": "Project Manager",
+        "exp": 7
+    },
+    {
+        "name": "Karan Kapoor",
+        "role": "Mobile App Developer",
+        "exp": 3
+    },
+    {
+        "name": "Tanvi Sinha",
+        "role": "Data Scientist",
+        "exp": 4
+    },
+    {
+        "name": "Rohan Desai",
+        "role": "Cloud Engineer",
+        "exp": 5
+    },
+    {
+        "name": "Ishita Pandey",
+        "role": "QA Engineer",
+        "exp": 2
+    },
+    {
+        "name": "Vikram Verma",
+        "role": "Security Analyst",
+        "exp": 6
+    },
+    {
+        "name": "Megha Rathi",
+        "role": "Software Engineer",
+        "exp": 3
+    },
+    {
+        "name": "Aditya Jain",
+        "role": "ML Engineer",
+        "exp": 2
+    },
+    {
+        "name": "Pooja Chauhan",
+        "role": "Technical Writer",
+        "exp": 4
+    },
+    {
+        "name": "Yash Thakur",
+        "role": "AI Engineer",
+        "exp": 3
+    },
+    {
+        "name": "Ritika Bansal",
+        "role": "System Analyst",
+        "exp": 5
+    },
+    {
+        "name": "Abhishek Tiwari",
+        "role": "Database Administrator",
+        "exp": 6
+    },
+    {
+        "name": "Divya Nair",
+        "role": "Scrum Master",
+        "exp": 7
+    },
+    {
+        "name": "Nikhil Roy",
+        "role": "Product Manager",
+        "exp": 8
+    },
+    {
+        "name": "Shruti Agrawal",
+        "role": "Business Analyst",
+        "exp": 4
+    }
+]
