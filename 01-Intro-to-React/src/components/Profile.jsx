@@ -4,7 +4,7 @@ export const ProfileData = (props) => {
     greeting, children
   } = props;
   return (
-    <div className="profile-card">
+    <div className="profile-card ">
           {greeting}
         {children}
       <div className="profile-image">
