@@ -8,7 +8,7 @@ const usersInfo = [
   { name: "Rajan", age: 20 },
 ];
 const DerivedState = () => {
-  const [users, setUsers] = useState([...usersInfo]);
+  const [users] = useState([...usersInfo]);
   console.log(users);
   const userCount = users.length; //* userCount is derived state
   const avgAge = users.reduce((acc, user) => acc + user.age, 0) / userCount;
