@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { FiUsers } from "react-icons/fi";
 
 const LiftStateup = () => {
   const [inputValue, setInputValue] = useState("");
   return (
     <div>
+      <FiUsers />
       <InputComponent inputValue={inputValue} setInputValue={setInputValue} />
       <DisplayComponent inputValue={inputValue} />
     </div>
