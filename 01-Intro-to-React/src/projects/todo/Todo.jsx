@@ -1,27 +1,54 @@
-
 import { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoLists from "./TodoLists";
 import TodoDateTime from "./TodoDateTime";
 const Todo = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
 
   const handleSubmit = (inputValue) => {
-    if (!inputValue) return;
-    if (tasks.includes(inputValue)) return;
-    setTasks((prevTasks) => [...prevTasks, inputValue]);
+    const { id, text, status } = inputValue;
+    if (!inputValue.text) return;
+
+    const existingTask = tasks.find(
+      (task) => task.text.toLowerCase() === text.toLowerCase()
+    );
+    if (existingTask) return;
+    setTasks((prevTasks) => [...prevTasks, { id, text, status }]);
   };
 
-  const handleDeletetask = (task) => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  const handleDeletetask = (id) => {
     setTasks((prevTasks) => {
-      return prevTasks.filter((t) => t !== task);
+      return prevTasks.filter((t) => t.id !== id);
+    });
+  };
+
+  const handleCheckedtask = (task) => {
+    if (!task.text) return;
+    setTasks((prevTasks) => {
+      return prevTasks.map((t) => {
+        if (t.id === task.id) {
+          return {
+            ...t,
+            status: t.status === "completed" ? "pending" : "completed",
+          };
+        }
+        return t;
+      });
     });
   };
 
   return (
     <section className="text-white p-12 rounded max-w-xl w-full">
       <header className="flex flex-col justify-center gap-3 text-white p-2 rounded">
-        <h1 className="text-2xl">Todo App</h1>
+        <div className="flex items-center justify-between gap-3 text-white p-2 rounded">
+          <h1 className="text-2xl">Todo App</h1>
+          <h3>Total Tasks: {tasks.length}</h3>
+        </div>
         <TodoDateTime />
       </header>
 
@@ -40,11 +67,12 @@ const Todo = () => {
       </section>
 
       <section className="flex flex-col gap-3 items-center justify-center w-full text-white p-2 rounded">
-        {tasks.map((task, index) => (
+        {tasks.map((task) => (
           <TodoLists
-            key={index}
+            key={task.id}
             task={task}
             handleDeletetask={handleDeletetask}
+            onHandleCheckedTaks={() => handleCheckedtask(task)}
           />
         ))}
       </section>

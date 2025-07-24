@@ -2,18 +2,23 @@ import { useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 
 const TodoForm = ({ onAddTask }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState({});
 
   const handleInputChange = (value) => {
-    setInputValue(value);
+    setInputValue({
+      id: Date.now(),
+      text: value,
+      status: "pending",
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!inputValue) return;
+    if (!inputValue.text.trim()) return;
     onAddTask(inputValue);
     setInputValue("");
   };
+
   return (
     <section className="flex w-full flex-col items-center justify-center gap-3 text-white p-2 rounded ">
       <form className="w-full" onSubmit={handleSubmit}>
@@ -22,7 +27,7 @@ const TodoForm = ({ onAddTask }) => {
             type="text"
             placeholder="Add Todo"
             className="px-4 py-3 outline-none w-full rounded-lg border border-zinc-500/30 focus:border-green-500"
-            value={inputValue}
+            value={inputValue.text}
             onChange={(e) => handleInputChange(e.target.value)}></input>
           <button
             type="submit"
