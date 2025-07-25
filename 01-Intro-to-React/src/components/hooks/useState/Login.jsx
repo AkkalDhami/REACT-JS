@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const Registration = () => {
+const Login = () => {
   const [user, setUser] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -28,26 +27,16 @@ const Registration = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto w-full border border-zinc-500/30 p-5 rounded-lg">
-      <h1 className="text-4xl">Registration Form</h1>
+    <div className="max-w-xl mx-auto w-full mt-5 border border-zinc-500/30 p-5 rounded-lg">
+      <h1 className="text-4xl">Login Form</h1>
       <form onSubmit={handleSubmit} className="w-full">
-        <input
-          className="px-4 py-3 border border-zinc-500/30 outline-none focus:border-green-500 w-full mt-3 rounded-full"
-          type="text"
-          name="name"
-          placeholder="Name"
-          id="name"
-          value={user.name}
-          onChange={handleInputChange}
-        />
         <input
           className="px-4 py-3 border border-zinc-500/30 outline-none focus:border-green-500 w-full mt-3 rounded-full"
           type="text"
           name="email"
           placeholder="Email"
           id="email"
-          value={user.email}
-          onChange={handleInputChange}
+          value={user.email} onChange={handleInputChange}
         />
         <input
           className="px-4 py-3 border border-zinc-500/30 outline-none focus:border-green-500 w-full mt-3 rounded-full"
@@ -55,8 +44,7 @@ const Registration = () => {
           name="password"
           placeholder="Password"
           id="password"
-          value={user.password}
-          onChange={handleInputChange}
+          value={user.password} onChange={handleInputChange}
         />
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-3 cursor-pointer rounded-full">
           Submit
@@ -66,4 +54,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Login;

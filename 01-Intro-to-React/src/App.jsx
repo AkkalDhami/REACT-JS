@@ -5,15 +5,19 @@ import LiftStateup from "./components/LiftStateup";
 import Registration from "./components/hooks/useState/Registration";
 import ShortCircuit from "./components/ShortCircuit";
 import Todo from "./projects/todo/Todo";
+import Login from "./components/hooks/useState/Login";
 function App() {
   return (
-    <section className="flex flex-col gap-3 items-center justify-center w-full text-white p-12 rounded ">
+    <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
       {/* <Card /> */}
       {/* <DerivedState /> */}
       {/* <LiftStateup /> */}
       {/* <Todo /> */}
       {/* <ShortCircuit /> */}
-      <Registration />
+      <div className="grid grid-cols-2 gap-3">
+        <Registration />
+        <Login />
+      </div>
     </section>
   );
 } //
