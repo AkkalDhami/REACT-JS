@@ -2,6 +2,7 @@
 import Card from "./components/Card";
 import DerivedState from "./components/DerivedState";
 import LiftStateup from "./components/LiftStateup";
+import ShortCircuit from "./components/ShortCircuit";
 import Todo from "./projects/todo/Todo";
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       {/* <Card /> */}
       {/* <DerivedState /> */}
       {/* <LiftStateup /> */}
-      <Todo />
+      {/* <Todo /> */}
+      <ShortCircuit />
     </section>
   );
 } //
