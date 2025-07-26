@@ -6,6 +6,8 @@ import Registration from "./components/hooks/useState/Registration";
 import ShortCircuit from "./components/ShortCircuit";
 import Todo from "./projects/todo/Todo";
 import Login from "./components/hooks/useState/Login";
+import ReactUseEffect from "./components/hooks/useEffect/ReactUseEffect";
+
 function App() {
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
@@ -14,10 +16,11 @@ function App() {
       {/* <LiftStateup /> */}
       {/* <Todo /> */}
       {/* <ShortCircuit /> */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* <div className="grid grid-cols-2 gap-3">
         <Registration />
         <Login />
-      </div>
+      </div> */}
+      <ReactUseEffect />
     </section>
   );
 } //
