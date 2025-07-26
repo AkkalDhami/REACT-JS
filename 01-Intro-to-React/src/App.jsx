@@ -9,6 +9,7 @@ import Login from "./components/hooks/useState/Login";
 import ReactUseEffect from "./components/hooks/useEffect/ReactUseEffect";
 import UseEffectChallange from "./components/hooks/useEffect/UseEffectChallange";
 import Cleanup from "./components/hooks/useEffect/Cleanup";
+import HowNotToFetchApi from "./components/hooks/useEffect/HowNotToFetchApi";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       </div> */}
       {/* <ReactUseEffect /> */}
       {/* <UseEffectChallange /> */}
-      <Cleanup />
+      {/* <Cleanup /> */}
+      <HowNotToFetchApi />
     </section>
   );
 } //
