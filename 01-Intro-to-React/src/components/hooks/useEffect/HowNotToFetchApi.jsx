@@ -2,23 +2,29 @@ import { useEffect, useState } from "react";
 
 const HowNotToFetchApi = () => {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const fetchData = async () => {
     fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
       .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((err) => console.log(err));
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err);
+        setLoading(false);
+      });
   };
   useEffect(() => {
     fetchData();
   }, []);
-  
-  if (!data) {
-    return <h1>Loading...</h1>;
-  }
-  
-  console.log(data);
-  console.log(data.sprites.other.dream_world.front_default);
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1>{error.message}</h1>;
+
   return (
     <div>
       <h1 className="text-4xl">How Not To Fetch Api</h1>
