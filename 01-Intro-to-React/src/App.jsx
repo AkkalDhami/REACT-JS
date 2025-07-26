@@ -7,6 +7,7 @@ import ShortCircuit from "./components/ShortCircuit";
 import Todo from "./projects/todo/Todo";
 import Login from "./components/hooks/useState/Login";
 import ReactUseEffect from "./components/hooks/useEffect/ReactUseEffect";
+import UseEffectChallange from "./components/hooks/useEffect/UseEffectChallange";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Registration />
         <Login />
       </div> */}
-      <ReactUseEffect />
+      {/* <ReactUseEffect /> */}
+      <UseEffectChallange />
     </section>
   );
 } //
