@@ -10,6 +10,7 @@ import ReactUseEffect from "./components/hooks/useEffect/ReactUseEffect";
 import UseEffectChallange from "./components/hooks/useEffect/UseEffectChallange";
 import Cleanup from "./components/hooks/useEffect/Cleanup";
 import HowNotToFetchApi from "./components/hooks/useEffect/HowNotToFetchApi";
+// import PokemonCard from "./components/hooks/useEffect/PokemonSite";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       {/* <UseEffectChallange /> */}
       {/* <Cleanup /> */}
       <HowNotToFetchApi />
+      {/* <PokemonCard /> */}
     </section>
   );
 } //
