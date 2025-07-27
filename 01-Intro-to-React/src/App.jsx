@@ -11,25 +11,13 @@ import UseEffectChallange from "./components/hooks/useEffect/UseEffectChallange"
 import Cleanup from "./components/hooks/useEffect/Cleanup";
 import HowNotToFetchApi from "./components/hooks/useEffect/HowNotToFetchApi";
 import UseRef from "./components/hooks/useRef/UseRef";
+import ForwardRef from "./components/hooks/useRef/ForwardRef";
 // import PokemonCard from "./components/hooks/useEffect/PokemonSite";
 
 function App() {
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
-      {/* <Card /> */}
-      {/* <DerivedState /> */}
-      {/* <LiftStateup /> */}
-      {/* <Todo /> */}
-      {/* <ShortCircuit /> */}
-      {/* <div className="grid grid-cols-2 gap-3">
-        <Registration />
-        <Login />
-      </div> */}
-      {/* <ReactUseEffect /> */}
-      {/* <UseEffectChallange /> */}
-      {/* <Cleanup /> */}
-      {/* <HowNotToFetchApi /> */}
-      <UseRef />
+      <ForwardRef />
     </section>
   );
 } //
