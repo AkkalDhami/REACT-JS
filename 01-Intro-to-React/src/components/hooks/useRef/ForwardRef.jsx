@@ -14,24 +14,24 @@ const ForwardRef = () => {
       <br />
       <BeforeReact19 label="password" type="password" ref={password} />
       <br />
-      <button type="submit">Submit</button>
+      <button type="submit" className="p-2 border">Submit</button>
     </form>
   );
 };
 
-const BeforeReact19 = forwardRef((props, ref) => {
-  console.log(props);
+const BeforeReact19 = (props) => {
+  
   return (
     <div>
       <label htmlFor={props.label}></label>
       <input
         type={props.type}
         name={props.label}
-        ref={ref}
+        ref={props.ref}
         className="p-2 border"
       />
     </div>
   );
-});
+};
 
 export default ForwardRef;
