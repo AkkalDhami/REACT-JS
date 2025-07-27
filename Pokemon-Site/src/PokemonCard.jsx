@@ -30,8 +30,8 @@ function PokemonCard({ pokemon }) {
       </div>
 
       {/* Stats */}
-      <div className="mt-4 space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
-        {pokemon.stats.slice(0, 3).map((stat) => (
+      <div className="mt-2 space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+        {pokemon.stats.slice(0, 5).map((stat) => (
           <div key={stat.stat.name} className="flex justify-between">
             <span className="capitalize">{stat.stat.name}</span>
             <span>{stat.base_stat}</span>
@@ -65,7 +65,7 @@ function getTypeColor(type) {
     flying: "#60a5fa",
   };
 
-  return colors[type] || "#64748b"; // fallback color
+  return colors[type] || "#64748b";
 }
 
 export default PokemonCard;
