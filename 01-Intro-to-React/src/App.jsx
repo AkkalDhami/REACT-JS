@@ -12,14 +12,15 @@ import Cleanup from "./components/hooks/useEffect/Cleanup";
 import HowNotToFetchApi from "./components/hooks/useEffect/HowNotToFetchApi";
 import UseRef from "./components/hooks/useRef/UseRef";
 import ForwardRef from "./components/hooks/useRef/ForwardRef";
-// import PokemonCard from "./components/hooks/useEffect/PokemonSite";
+import UseIdHook from "./components/hooks/useId/UseIdHook";
+
 
 function App() {
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
-      <ForwardRef />
+      <UseIdHook />
     </section>
   );
-} //
+} 
 
 export default App;
