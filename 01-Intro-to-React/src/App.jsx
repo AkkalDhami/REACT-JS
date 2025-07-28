@@ -16,6 +16,8 @@ import UseIdHook from "./components/hooks/useId/UseIdHook";
 import PropDrilling from "./components/PropDrilling";
 import Home from "./components/hooks/contextApi/Home";
 import { UserProvider } from "./components/hooks/contextApi/Index";
+import About from "./components/hooks/contextApi/About";
+import Service from "./components/hooks/contextApi/Service";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
       <UserProvider>
         <Home />
+        <About />
+        <Service />
       </UserProvider>
     </section>
   );
