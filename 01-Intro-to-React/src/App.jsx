@@ -13,12 +13,13 @@ import HowNotToFetchApi from "./components/hooks/useEffect/HowNotToFetchApi";
 import UseRef from "./components/hooks/useRef/UseRef";
 import ForwardRef from "./components/hooks/useRef/ForwardRef";
 import UseIdHook from "./components/hooks/useId/UseIdHook";
+import PropDrilling from "./components/PropDrilling";
 
 
 function App() {
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
-      <UseIdHook />
+      <PropDrilling />
     </section>
   );
 } 
