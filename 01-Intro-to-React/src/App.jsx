@@ -14,12 +14,17 @@ import UseRef from "./components/hooks/useRef/UseRef";
 import ForwardRef from "./components/hooks/useRef/ForwardRef";
 import UseIdHook from "./components/hooks/useId/UseIdHook";
 import PropDrilling from "./components/PropDrilling";
+import Home from "./components/hooks/contextApi/Home";
+import { UserProvider } from "./components/hooks/contextApi/Index";
 
 
 function App() {
+
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
-      <PropDrilling />
+      <UserProvider>
+        <Home />
+      </UserProvider>
     </section>
   );
 } 
