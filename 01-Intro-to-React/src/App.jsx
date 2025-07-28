@@ -19,9 +19,7 @@ import { UserProvider } from "./components/hooks/contextApi/Index";
 import About from "./components/hooks/contextApi/About";
 import Service from "./components/hooks/contextApi/Service";
 
-
 function App() {
-
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
       <UserProvider>
@@ -31,6 +29,6 @@ function App() {
       </UserProvider>
     </section>
   );
-} 
+}
 
 export default App;

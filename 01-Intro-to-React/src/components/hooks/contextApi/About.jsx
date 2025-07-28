@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import UserContext from "./Index";
+import { useUserContext } from "./Index";
+
 
 const About = () => {
-  const name = useContext(UserContext);
+    const name = useUserContext();
   return (
     <div>
       <h1>Hello From About Page,</h1>
