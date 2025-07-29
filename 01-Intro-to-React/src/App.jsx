@@ -18,15 +18,17 @@ import Home from "./components/hooks/contextApi/Home";
 import { UserProvider } from "./components/hooks/contextApi/Index";
 import About from "./components/hooks/contextApi/About";
 import Service from "./components/hooks/contextApi/Service";
+import UseReducer from "./components/hooks/useReducer/UseReducer";
 
 function App() {
   return (
     <section className="flex flex-col gap-3 justify-center w-full text-white p-12 rounded ">
-      <UserProvider>
+      {/* <UserProvider>
         <Home />
         <About />
         <Service />
-      </UserProvider>
+        </UserProvider> */}
+      <UseReducer />
     </section>
   );
 }
