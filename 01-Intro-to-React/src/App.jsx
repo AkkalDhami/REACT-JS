@@ -20,6 +20,7 @@ import About from "./components/hooks/contextApi/About";
 import Service from "./components/hooks/contextApi/Service";
 import UseReducer from "./components/hooks/useReducer/UseReducer";
 import Memo from "./components/hooks/memo/Memo";
+import UseCallback from "./components/hooks/useCallback/UseCallback";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Service />
         </UserProvider> */}
 
-      <Memo />
+      <UseCallback />
     </section>
   );
 }
