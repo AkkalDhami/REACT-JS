@@ -7,6 +7,8 @@ const UseReducer = () => {
         return state + 1;
       case "DECREMENT":
         return state <= 0 ? 0 : state - 1;
+      case "RESET":
+        return 0;
       default:
         return state;
     }
@@ -23,6 +25,13 @@ const UseReducer = () => {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Increment
       </button>
+
+      <button
+        onClick={() => dispatch({ type: "RESET" })}
+        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+        Reset
+      </button>
+
       <button
         onClick={() => dispatch({ type: "DECREMENT" })}
         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
