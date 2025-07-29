@@ -19,6 +19,7 @@ import { UserProvider } from "./components/hooks/contextApi/Index";
 import About from "./components/hooks/contextApi/About";
 import Service from "./components/hooks/contextApi/Service";
 import UseReducer from "./components/hooks/useReducer/UseReducer";
+import Memo from "./components/hooks/memo/Memo";
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
         <About />
         <Service />
         </UserProvider> */}
-      <UseReducer />
+
+      <Memo />
     </section>
   );
 }
