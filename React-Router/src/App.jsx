@@ -3,11 +3,13 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import Home from "./components/Home";
 import AppLayout from "./components/layout/AppLayout";
+import Error404page from "./components/Error404page";
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <AppLayout />,
+      errorElement: <Error404page />,
       children: [
         {
           path: "/",
@@ -20,6 +22,10 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "*",
+          element: <Error404page />,
         },
       ],
     },
