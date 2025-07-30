@@ -39,6 +39,14 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
+              <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                <NavLink
+                  to="/movies"
+                  className="flex items-center"
+                  style={getNavLinkStyles}>
+                  Movies
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
