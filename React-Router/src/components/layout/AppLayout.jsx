@@ -1,16 +1,23 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import { Outlet, useNavigation } from "react-router-dom";
 
 const AppLayout = () => {
-  return (
-      <div>
-          <Header />
-          <Outlet />
-          <Footer />
-    </div>
-  )
-}
+  const navigation = useNavigation();
+  console.log(navigation);
 
-export default AppLayout
+  if (navigation.state === "loading") {
+    return <div className="flex min-h-screen items-center justify-center text-5xl">Loading...</div>;
+  }
+
+  return (
+    <div>
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
+
+export default AppLayout;
