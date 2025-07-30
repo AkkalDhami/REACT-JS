@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Contact from "./components/Contact";
+import Contact, { contactData } from "./components/Contact";
 import About from "./components/About";
 import Home from "./components/Home";
 import AppLayout from "./components/layout/AppLayout";
@@ -26,6 +26,7 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+          action: contactData,
         },
         {
           path: "/movies",
