@@ -359,6 +359,7 @@ ul {
 .footer-section {
   background: #151414;
   position: relative;
+  margin-top: 12px;
 }
 
 .copyright-area {
