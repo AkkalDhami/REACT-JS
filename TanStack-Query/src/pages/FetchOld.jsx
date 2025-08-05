@@ -11,7 +11,6 @@ const FetchOld = () => {
   const getPostsData = async () => {
     try {
       const res = await getPosts();
-      console.log(res);
       res.status === 200 && setPosts(res.data);
       setIsLoading(false);
       setIsError(false);
