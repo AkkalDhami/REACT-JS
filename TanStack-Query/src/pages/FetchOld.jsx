@@ -13,7 +13,6 @@ const FetchOld = () => {
       const res = await getPosts();
       res.status === 200 && setPosts(res.data);
       setIsLoading(false);
-      setIsError(false);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
