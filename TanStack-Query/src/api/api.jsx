@@ -6,9 +6,9 @@ const api = axios.create({
 
 export const getPosts = async () => api.get("/posts");
 
-export const fetchPosts = async () => {
+export const fetchPosts = async (pageNo) => {
   try {
-    const res = await api.get("/posts?_start=0&_limit=3");
+    const res = await api.get(`/posts?_start=${pageNo * 3}&_limit=3`);
     return res.data;
   } catch (error) {
     console.log(error);
