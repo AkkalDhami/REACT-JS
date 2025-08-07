@@ -1,34 +1,44 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { fetchUsers } from "../api/api";
+import { useInView } from "react-intersection-observer";
 const InfiniteScrolling = () => {
-  const { data, status, isFetchingNextPage, fetchNextPage } = useInfiniteQuery({
-    queryKey: ["users"],
-    queryFn: fetchUsers,
-    getNextPageParam: (lastPage, allPages) => {
-      console.log(lastPage, allPages);
-      return lastPage.length === 10 ? allPages.length + 1 : undefined;
-    },
-  });
+  const { data, status, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useInfiniteQuery({
+      queryKey: ["users"],
+      queryFn: fetchUsers,
+      getNextPageParam: (lastPage, allPages) => {
+        console.log(lastPage, allPages);
+        return lastPage.length === 10 ? allPages.length + 1 : undefined;
+      },
+    });
   console.log(data);
 
-  const handleScroll = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop + 1 >=
-      document.documentElement.scrollHeight
-    ) {
-      fetchNextPage();
-    }
-  };
+  //   const handleScroll = () => {
+  //     if (
+  //       window.innerHeight + document.documentElement.scrollTop + 1 >=
+  //       document.documentElement.scrollHeight
+  //     ) {
+  //       fetchNextPage();
+  //     }
+  //   };
+
+  //   useEffect(() => {
+  //     window.addEventListener("scroll", handleScroll);
+  //   }, []);
+
+  const { ref, inView } = useInView({
+    threshold: 1,
+  });
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+    if (inView && hasNextPage) {
+      fetchNextPage();
+    }
+  }, [inView, fetchNextPage, hasNextPage]);
 
   if (status === "loading") return <div>Loading...</div>;
   if (status === "error") return <div>Error fetching data</div>;
-
-  if (isFetchingNextPage) return <div>Loading more...</div>;
 
   return (
     <div>
@@ -51,6 +61,13 @@ const InfiniteScrolling = () => {
           ))}
         </ul>
       ))}
+      <div ref={ref} style={{ padding: "20px", textAlign: "center" }}>
+        {isFetchingNextPage
+          ? "Loading more..."
+          : hasNextPage
+          ? "Scroll down to load more"
+          : "No more users"}
+      </div>
     </div>
   );
 };
