@@ -2,7 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { fetchUsers } from "../api/api";
 const InfiniteScrolling = () => {
-  const { data, status, fetchNextPage } = useInfiniteQuery({
+  const { data, status, isFetchingNextPage, fetchNextPage } = useInfiniteQuery({
     queryKey: ["users"],
     queryFn: fetchUsers,
     getNextPageParam: (lastPage, allPages) => {
@@ -27,6 +27,8 @@ const InfiniteScrolling = () => {
 
   if (status === "loading") return <div>Loading...</div>;
   if (status === "error") return <div>Error fetching data</div>;
+
+  if (isFetchingNextPage) return <div>Loading more...</div>;
 
   return (
     <div>
