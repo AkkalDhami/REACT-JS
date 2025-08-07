@@ -10,6 +10,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "./App.css";
 import FetchRQDetails from "./components/ui/FetchRQDetails";
+import InfiniteScrolling from "./pages/InfiniteScrolling";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/rq/:postid",
         element: <FetchRQDetails />,
+      },
+      {
+        path: "/infinite",
+        element: <InfiniteScrolling />,
       },
     ],
   },
