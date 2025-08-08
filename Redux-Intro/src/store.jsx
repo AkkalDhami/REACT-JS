@@ -27,18 +27,27 @@ const taskReducer = (state = tinitialState, action) => {
 };
 
 const store = createStore(taskReducer);
+
+const addTask = (task) => {
+  return {
+    type: ADD_TASK,
+    payload: task,
+  };
+};
+
+const deleteTask = (index) => {
+  return {
+    type: DELETE_TASK,
+    payload: index,
+  };
+};
+
 console.log(store.getState());
 
-store.dispatch({
-  type: ADD_TASK,
-  payload: "Learn Redux",
-});
+store.dispatch(addTask("Task 1"));
 console.log(store.getState());
 
-store.dispatch({
-  type: DELETE_TASK,
-  payload: 0,
-});
+store.dispatch(deleteTask(0));
 console.log(store.getState());
 
 export default store;
