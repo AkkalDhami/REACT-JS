@@ -42,8 +42,6 @@ const deleteTask = (index) => {
   };
 };
 
-store.dispatch(addTask("Task 1"));
-console.log(store.getState());
-
+export { addTask, deleteTask };
 
 export default store;
