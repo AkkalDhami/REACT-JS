@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+// import { composeWiqthDevTools } from "@redux-devtools/extension";
 
 const ADD_TASK = "task/add";
 const DELETE_TASK = "task/delete";
@@ -26,7 +27,7 @@ const taskReducer = (state = tinitialState, action) => {
   }
 };
 
-const store = createStore(taskReducer);
+const store = createStore(taskReducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 
 const addTask = (task) => {
   return {
