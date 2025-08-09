@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import store from "./store";
+import Todo from "./components/Todo";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  console.log(store);
+  return <Todo />;
+};
 
-export default App
+export default App;
