@@ -1,49 +1,30 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-const ADD_TASK = "task/add";
-const DELETE_TASK = "task/delete";
-const tinitialState = {
+const initialState = {
   task: [],
-  isLoading: false,
 };
-const taskReducer = (state = tinitialState, action) => {
-  switch (action.type) {
-    case ADD_TASK:
-      return {
-        ...state,
-        task: [...state.task, action.payload],
-      };
 
-    case DELETE_TASK:
-      return {
-        ...state,
-        task: state.task.filter((curTask, index) => index !== action.payload),
-      };
+const taskReducer = createSlice({
+  name: "task",
+  initialState,
+  reducers: {
+    addTask: (state, action) => {
+      state.task.push(action.payload);
+    },
+    deleteTask: (state, action) => {
+      state.task.splice(action.payload, 1);
+    },
+  },
+});
 
-    default:
-      return state;
-  }
-};
 const store = configureStore({
   reducer: {
     taskReducer,
   },
 });
 
-const addTask = (task) => {
-  return {
-    type: ADD_TASK,
-    payload: task,
-  };
-};
+export const { addTask, deleteTask } = taskReducer.actions;
 
-const deleteTask = (index) => {
-  return {
-    type: DELETE_TASK,
-    payload: index,
-  };
-};
-
-export { addTask, deleteTask };
+console.log(taskReducer);
 
 export default store;
