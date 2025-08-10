@@ -11,20 +11,22 @@ const taskReducer = createSlice({
     addTask: (state, action) => {
       state.task.push(action.payload);
     },
+
     deleteTask: (state, action) => {
-      state.task.splice(action.payload, 1);
+      //   state.task.splice(action.payload, 1);
+      state.task = state.task.filter(
+        (curTask, index) => index !== action.payload
+      );
     },
   },
 });
 
 const store = configureStore({
   reducer: {
-    taskReducer,
+    taskReducer: taskReducer.reducer,
   },
 });
 
 export const { addTask, deleteTask } = taskReducer.actions;
-
-console.log(taskReducer);
 
 export default store;
